@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  dive_time: 1
+  instructor: false
+
+two:
+  name: MyString
+  dive_time: 1
+  instructor: false
