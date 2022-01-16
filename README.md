@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+----------------------------------------
+
+A demonstration of a Rails app with complex MVC structure.
