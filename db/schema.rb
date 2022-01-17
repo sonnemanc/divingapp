@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 2022_01_17_174618) do
     t.string "name"
     t.integer "dive_time"
     t.string "password_digest"
-    t.boolean "instructor"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -4,7 +4,6 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :name
       t.integer :dive_time
       t.string :password_digest
-      t.boolean :instructor
 
       t.timestamps
     end
