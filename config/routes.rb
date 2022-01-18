@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   get '/logout' => 'session#destroy'
 
   resources :locations, only: [:index, :show]
+    resources :lessons
   root 'static#home'
 end

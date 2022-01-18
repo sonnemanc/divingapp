@@ -1,6 +1,72 @@
+<div class="row">
 <% @locations.each do |location| %>
-  <li>
-    Location:<%= location.name %><br>
-    Prior Dive Time required: <%= location.min_dive_time %>
-  </li>
+  <div class="column">
+    <div class="card">
+      <h4><%= location.name %></h4>
+      <img src="<%=%>" height="175" width="175">
+      <p>Dive Length: <%= location.dive_length %> hours.</p>
+      <p>User Rating: <%= location.mean_rating %>/5</p>
+      <p></p> 
+      <form method="GET" action='locations/<%= location.id %>'>
+        <button type="submit">Book a Lesson</button>
+      </form>
+    </div>
+  </div>
 <% end %>
+</div>
+
+
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.column {
+  float: left;
+  width: 33%;
+  padding: 0 10px;
+}
+
+.row {margin: 0 -5px;}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  margin-bottom: 10px;
+}
+
+.dive_time_required {
+  color: #A9A9A9;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+</style>

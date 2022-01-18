@@ -1,0 +1,31 @@
+<div class="card">
+  <h4><%= @location.name %></h4>
+  <img src="<%=%>" height="300" width="300">
+
+  <p class="dive_time_required">Dive Time Required: <%= @location.min_dive_time %> hour.</p>
+  <p>Dive Length: <%= @location.dive_length %> hour.</p>
+  <p>A list of available instructors will go here.</p>
+  <%= form_for @lesson do |f| %>
+    <%= f.hidden_field :user_id %><br />
+    <%= f.hidden_field :location_id %><br />
+    <%= f.submit "Book Now", class:"card button" %>
+  <% end %>
+</div>
+
+<style>
+.card {width: 50%;}
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: grey;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 22px;
+}
+.card button:hover {
+  opacity: 0.7;
+}
+</style>

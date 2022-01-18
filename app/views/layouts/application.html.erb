@@ -6,6 +6,10 @@
     font-family: Arial;
   }
 
+  .body { 
+    background-image: url('/assets/starfish.jpg')
+  }
+
   .navbar a {
     float: left;
     font-size: 16px;
@@ -45,6 +49,7 @@
     background-color: #203354;
     color: white;
     text-align: center;
+    margin: 0px;
   }
 
   .card {
@@ -52,9 +57,14 @@
     padding: 16px;
     margin: auto;
     text-align: center;
+    color: white;
     font-family: arial;
-    background-color: #f1f1f1;
+    background: inherit;
+    background:attachment: fixed;
+    backdrop-filter: blur(2px);
   }
+
+
   
   .price {
     color: grey;
@@ -76,26 +86,46 @@
   .card button:hover {
     opacity: 0.8;
   }
+
+  .module {
+  background: url('/assets/starfish.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-size: center;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  object-fit: contain;
+  position: relative;
+  overflow: hidden;
+  margin: 0px;
+}
+
 </style>
 
-<div class="navbar">
-  <a href="/">Home</a>
-  <a href="/about_us">About Us</a>
-  <a href="/locations">Locations</a>
-  <% if !current_user %>
-  <a class="navbar-brand" href="<%= new_user_path %>"/>Sign Up</a>
-  <a class="navbar-brand" href="<%= signin_path %>"/>Log In</a>
-<% end %>
-<% if current_user %>
-  <a class="navbar-brand" href="<%= user_path(current_user) %>"/><%= current_user.name %>'s profile</a>
-  <a class="navbar-brand" href="/logout"/>Log Out</a>
-<% end %>
-</div>
 
-<%= yield %>
+  <head>
+    <div class="navbar">
+      <a href="/">Home</a>
+      <a href="/about_us">About Us</a>
+      <a href="/locations">Locations</a>
+      <% if !current_user %>
+        <a class="navbar-brand" href="<%= new_user_path %>"/>Sign Up</a>
+        <a class="navbar-brand" href="<%= signin_path %>"/>Log In</a>
+      <% end %>
+      <% if current_user %>
+        <a class="navbar-brand" href="<%= user_path(current_user) %>"/><%= current_user.name %>'s profile</a>
+        <a class="navbar-brand" href="/logout"/>Log Out</a>
+      <% end %>
+    </div>
+  </head>
+<div class="module">
+  <body>
 
-<div class="footer">
-  <p>Contact Us</p>
-  <p>Scubalessons@scuba.com</p>
-  <p>(555)555-5555</p>
+  <%= yield %>
 </div>
+  <div class="footer">
+    <p>Contact Us</p>
+    <p>Scubalessons@scuba.com</p>
+    <p>(555)555-5555</p>
+  </div>
+  </body>
