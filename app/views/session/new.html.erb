@@ -1,0 +1,10 @@
+<%= form_for @user do |f| %>
+    <%= f.label :'Enter Your Name:' %><br>
+    <%= f.text_field :name %><br><br>
+
+    <%= f.label :'Enter Your Password:' %><br>
+    <%= f.text_field :password %><br>
+
+    <%= f.submit 'submit' %>
+<% end %>
+  

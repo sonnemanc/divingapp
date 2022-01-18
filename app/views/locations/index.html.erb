@@ -1,0 +1,6 @@
+<% @locations.each do |location| %>
+  <li>
+    Location:<%= location.name %><br>
+    Prior Dive Time required: <%= location.min_dive_time %>
+  </li>
+<% end %>

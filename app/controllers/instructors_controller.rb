@@ -1,3 +1,0 @@
-class InstructorsController < ApplicationController
-
-end

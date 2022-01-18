@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   get '/signin' => 'session#new', as: 'signin'
   post '/session' => 'session#create', as: 'session'
   delete '/session/', to: 'session#destroy'
+  get '/about_us', to: 'static#about_us'
 
+  get '/logout' => 'session#destroy'
+
+  resources :locations, only: [:index, :show]
   root 'static#home'
 end
