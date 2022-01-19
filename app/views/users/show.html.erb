@@ -1,4 +1,24 @@
-<h1>You are a <%= @user.name %>!</h1>
-<h3>You have accumulated <%= @user.dive_time %> hours of dive time! </h3>
+<div class="text">
+  <h1>You are a <%= @user.name %>!</h1>
+  <h3>You have accumulated <%= @user.dive_time %> hours of dive time! </h3>
+</div>
 
+<% if flash[:message] %>
+  <div class="center alert">
+    <p><%= flash[:message] %></p>
+  </div>
+<% end %>
 
+<div class="text">
+  <ul>
+    <% @lessons.each do |lesson| %>
+        <li><%= lesson.location.name %>, with <%= lesson.instructor.name %> on <%= lesson.created_at %> </li>
+    <% end %>
+  </ul>
+<div class="text">
+
+<style>
+.center.alert {
+    color: white;
+}
+</style>

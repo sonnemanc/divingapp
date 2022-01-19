@@ -5,6 +5,7 @@ class Location < ApplicationRecord
     serialize :ratings,Array
 
     def mean_rating
-        self.ratings.sum(0.0) / self.ratings.size
+        mean = self.ratings.sum(0.0) / self.ratings.size
+        mean.round(1)
     end
 end
