@@ -7,7 +7,8 @@
   }
 
   .body { 
-    background-image: url('/assets/starfish.jpg')
+    background-image: url('/assets/starfish.jpg');
+
   }
 
   .navbar a {
@@ -88,17 +89,29 @@
   }
 
   .module {
-  background: url('/assets/starfish.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-  background-size: center;
-  background-repeat: no-repeat;
-  min-height: 100%;
-  object-fit: contain;
-  position: relative;
-  overflow: hidden;
-  margin: 0px;
-}
+    background: url('/assets/starfish.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-size: center;
+    background-repeat: no-repeat;
+    min-height: 100%;
+    object-fit: contain;
+    position: relative;
+    overflow: hidden;
+    margin: 0px;
+  }
+
+  .column2 {
+    float: left;
+    max-width: 50%;
+    padding: 20px;
+    background: inherit;
+    background:attachment: fixed;
+    backdrop-filter: blur(2px);
+    color: white;
+    margin: auto;
+    
+  }
 
 </style>
 
@@ -118,14 +131,14 @@
       <% end %>
     </div>
   </head>
-<div class="module">
-  <body>
 
-  <%= yield %>
-</div>
+  <div class="module">
+
+   <%= yield %>
+  </div>
+
   <div class="footer">
     <p>Contact Us</p>
     <p>Scubalessons@scuba.com</p>
     <p>(555)555-5555</p>
   </div>
-  </body>
