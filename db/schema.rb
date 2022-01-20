@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2022_01_17_174618) do
     t.integer "min_dive_time"
     t.integer "dive_length"
     t.text "ratings"
+    t.string "pic_url"
+    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,9 +1,5 @@
 class LessonsController < ApplicationController
 
-    def new
-        @lesson = Lesson.new
-    end
-
     def create
         @lesson = Lesson.create(lesson_params)
         message = @lesson.take_dive

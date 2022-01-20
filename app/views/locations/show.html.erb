@@ -5,16 +5,19 @@
   <p class="dive_time_required">Dive Time Required: <%= @location.min_dive_time %> hour.</p>
   <p>Dive Length: <%= @location.dive_length %> hour.</p>
   <p>A list of available instructors will go here.</p>
+
   <%= form_for @lesson do |f| %>
     <%= f.hidden_field :user_id %><br />
     <%= f.hidden_field :location_id %><br />
+    <%= label_tag(:instructor, "Please select an instructor:") %>
+    <%= collection_select(:lesson, :instructor_id, Instructor.all, :id, :name, prompt: "Please select your instructor") %>
     <%= f.submit "Book Now", class:"card button" %>
   <% end %>
 </div>
 
 <style>
-.card {width: 50%;}
-.card button {
+  .card {width: 50%;}
+  .card button {
   border: none;
   outline: 0;
   padding: 12px;
@@ -24,8 +27,9 @@
   cursor: pointer;
   width: 100%;
   font-size: 22px;
-}
-.card button:hover {
+  }
+  
+  .card button:hover {
   opacity: 0.7;
 }
 </style>
