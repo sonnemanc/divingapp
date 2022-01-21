@@ -6,7 +6,8 @@ class UsersController < ApplicationController
     end
 
     def create
-        if @user = User.create(user_params)
+      @user = User.new(user_params)
+        if @user.save
             session[:user_id] = @user.id
             redirect_to user_path(@user)
         else
@@ -15,7 +16,8 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = User.find_by(id: params[:id])
+        @user = User.find_by(id: current_user)
+        @lessons = Lesson.all.select {|lesson| lesson.user_id == @user.id }
     end
 
     def index
@@ -25,6 +27,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:name, :password, :dive_time, :password_confirmation)
+        params.require(:user).permit(:name, :password, :email, :dive_time, :password_confirmation)
     end
+
 end

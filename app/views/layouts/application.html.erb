@@ -2,11 +2,12 @@
 <style>
   .navbar {
     overflow: hidden;
-    background-color: #3A3B3C;
+    background-color: #000000;
     font-family: Arial;
   }
 
   .body { 
+    color: white;
     background-image: url('/assets/starfish.jpg');
 
   }
@@ -65,7 +66,9 @@
     backdrop-filter: blur(2px);
   }
 
-
+.text {
+  color: white;
+}
   
   .price {
     color: grey;
@@ -113,6 +116,9 @@
     
   }
 
+.field_with_errors {
+  color: red;
+}
 </style>
 
 
@@ -123,11 +129,11 @@
       <a href="/locations">Locations</a>
       <% if !current_user %>
         <a class="navbar-brand" href="<%= new_user_path %>"/>Sign Up</a>
-        <a class="navbar-brand" href="<%= signin_path %>"/>Log In</a>
+        <a class="navbar-brand" href="<%= login_path %>"/>Log In</a>
       <% end %>
       <% if current_user %>
         <a class="navbar-brand" href="<%= user_path(current_user) %>"/><%= current_user.name %>'s profile</a>
-        <a class="navbar-brand" href="/logout"/>Log Out</a>
+        <%= link_to "Log Out", logout_path, method: "DELETE" %>
       <% end %>
     </div>
   </head>
