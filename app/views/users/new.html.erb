@@ -5,5 +5,12 @@
   
 <div class="column2">
   <h2>Omniauth Form Here</h3>
-  <p>Some placeholder text</p>
+  <% if session[:user_id] %>
+  <h1><%= @user.name %></h1>
+  <h2>Email: <%= @user.email %></h2>
+  <h2>GitHub UID: <%= @user.uid %></h2>
+  <img src="<%= @user.image %>">
+<% else %>
+  <%= link_to('Log in with GitHub!', '/auth/github', method: :post) %>
+<% end %>
 </div>

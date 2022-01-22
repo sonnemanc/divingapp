@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 2022_01_17_174618) do
     t.integer "dive_time", default: 0
     t.string "password_digest"
     t.string "email"
+    t.string "image"
+    t.string "uid"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
