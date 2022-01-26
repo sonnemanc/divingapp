@@ -1,5 +1,5 @@
-
-<%= form_tag login_path do %>
+<div class="column2"
+  <%= form_tag login_path do %>
   <% flash.each do |type, msg| %>
     <div class="field_with_errors">
       <%= msg.join %>
@@ -10,5 +10,9 @@
   <%= label_tag :password %><br>
   <%= password_field_tag :password %><br>
   <%= submit_tag "Login" %>
-<% end %>
-  
+  <% end %>
+</div>
+
+<div class="column2">
+  <%= button_to('Log in with GitHub!', '/auth/github', method: :post) %>
+</div>

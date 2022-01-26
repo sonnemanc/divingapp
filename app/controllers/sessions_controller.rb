@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-    skip_before_action :user_verified, only: [:login, :create]
+    skip_before_action :user_verified, only: [:login, :create, :gitlogin]
   
 
 
@@ -20,9 +20,10 @@ class SessionsController < ApplicationController
 
     def gitlogin
       @user = User.find_or_create_by(uid: auth['uid']) do |u|
-        u.name = auth['info']['name']
+        u.name = auth['info']['nickname']
         u.email = auth['info']['email']
         u.image = auth['info']['image']
+        u.password = SecureRandom.hex(10)
       end
       session[:user_id] = @user.id
       redirect_to @user

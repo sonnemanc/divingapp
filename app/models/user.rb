@@ -4,6 +4,6 @@ class User < ApplicationRecord
     has_many :locations, through: :lessons
     has_secure_password
 
-    validates :name, :email, presence: true
-    validates :name, :email, uniqueness: true
+    validates :name, presence: true
+    validates :name, uniqueness: true
 end

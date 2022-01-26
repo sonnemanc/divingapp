@@ -13,4 +13,5 @@ resources :users
     resources :lessons, only: [:show, :index, :new, :create]
 
 get '/auth/github/callback' => 'sessions#gitlogin'
+
 end
