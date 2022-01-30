@@ -68,3 +68,5 @@ gem "securerandom", "~> 0.1.1"
 gem "devise", "~> 4.8"
 
 gem "rails-pry", "~> 0.0.1"
+
+gem "tux", "~> 0.3.0"
