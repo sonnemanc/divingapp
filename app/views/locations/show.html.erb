@@ -1,24 +1,27 @@
-<div class="card">
-  <h4><%= @location.name %></h4>
-  <img src="<%=%>" height="300" width="300">
+<div class="row">
+<div class="column">
+  <div class="card">
+    <h4><%= @location.name %></h4>
+    <img src="<%= @location.pic_url %>" height="300" width="300">
 
-  <p class="dive_time_required">Dive Time Required: <%= @location.min_dive_time %> hour.</p>
-  <p>Dive Length: <%= @location.dive_length %> hour.</p>
-  <p>A list of available instructors will go here.</p>
+    <p class="dive_time_required">Dive Time Required: <%= @location.min_dive_time %> hour.</p>
+    <p>Dive Length: <%= @location.dive_length %> hour.</p>
+    <p>A list of available instructors will go here.</p>
 
-  <% if short_dive_time? %>
-    <p>You do not have enough experience!</p>
-  <% else %>
-    <%= form_for @lesson do |f| %>
-      <%= f.hidden_field :user_id %><br />
-      <%= f.hidden_field :location_id %><br />
-      <%= label_tag(:instructor, "Please select an instructor:") %>
-      <%= collection_select(:lesson, :instructor_id, Instructor.all, :id, :name, prompt: "Please select your instructor") %>
-      <%= f.submit "Book Now", class:"card button" %>
+    <% if short_dive_time? %>
+      <p style="color:red"><strong>You do not have enough experience!</strong></p>
+    <% else %>
+      <%= form_for @lesson do |f| %>
+        <%= f.hidden_field :user_id %><br />
+        <%= f.hidden_field :location_id %><br />
+        <%= label_tag(:instructor, "Please select an instructor:") %>
+        <%= collection_select(:lesson, :instructor_id, Instructor.all, :id, :name, prompt: "Please select your instructor") %>
+        <%= f.submit "Book Now", class:"card button" %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
-
+</div>
 <style>
   .card {width: 50%;}
   .card button {

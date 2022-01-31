@@ -20,4 +20,17 @@ class Lesson < ApplicationRecord
           "We hope you enjoyed your dive! Please take a second to rate #{self.location.name}"
         end
     end
+
+    def instructor_name=(instructor_name)
+      self.instructor.name
+    end
+
+    def instructor_name
+      @instructor_name
+    end
+
+    def sorted_lessons
+      self.order(instructor_name)
+    end
+
 end

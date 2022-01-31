@@ -1,5 +1,10 @@
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
+
   .navbar {
     overflow: hidden;
     background-color: #000000;
@@ -63,11 +68,20 @@
     font-family: arial;
     background: inherit;
     background:attachment: fixed;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(4px);
   }
 
   .text {
-  color: white;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-family: arial;
+    background: inherit;
+    background:attachment: fixed;
+    backdrop-filter: blur(2px);
   }
   
   .price {
@@ -75,7 +89,7 @@
     font-size: 22px;
   }
   
-  .card button {
+  .card.button {
     border: none;
     outline: 0;
     padding: 12px;
@@ -127,9 +141,8 @@
   text-align: center;
   color: white;
   font-family: arial;
-  background: inherit;
+  background: black;
   background:attachment: fixed;
-  backdrop-filter: blur(2px);
   max-width: 60%;
 }
 

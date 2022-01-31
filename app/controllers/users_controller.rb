@@ -18,12 +18,13 @@ class UsersController < ApplicationController
     def show
         @user = User.find_by(id: current_user)
         #@lessons = Lesson.all.select {|lesson| lesson.user_id == @user.id }
-        @lessons = @user.lessons.order(:instructor_id)
+        @lessons = Lesson.joins(:instructor).where(user_id: current_user).order('name')
     end
 
     def index
         @users = User.all
     end
+
 
     private
 
